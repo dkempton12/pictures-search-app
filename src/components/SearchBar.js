@@ -5,10 +5,10 @@ class SearchBar extends React.Component {
     term: '',
   };
 
-  onSubmitForm(event) {
+  onSubmitForm = (event) => {
     event.preventDefault();
     console.log(event);
-  }
+  };
   render() {
     return (
       <div className='ui segment'>
