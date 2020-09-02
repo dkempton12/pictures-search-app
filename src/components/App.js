@@ -3,10 +3,14 @@ import SearchBar from './SearchBar';
 import unsplash from '../apis/unsplash';
 
 class App extends React.Component {
-  onFormSubmit = (event) => {
-    unsplash.get('/search/photos', {
+  state = {
+    images: [],
+  };
+  onFormSubmit = (term) => {
+    const response = unsplash.get('/search/photos', {
       params: { query: term },
     });
+    this.setState({ images: response.data.results });
   };
   render() {
     return (
