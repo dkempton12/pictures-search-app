@@ -19,7 +19,7 @@ class App extends React.Component {
     return (
       <div className='ui container'>
         <SearchBar onSubmit={this.onSearchSubmit} />
-        <ImageList />
+        <ImageList images={this.state.images} />
       </div>
     );
   }
