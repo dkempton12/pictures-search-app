@@ -7,9 +7,13 @@ class ImageCard extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.imageRef);
-    console.log(this.imageRef.current.clientHeight);
+    // setSpans will run after image is fully loaded
+    this.imageRef.current.addEventListener("load", this.setSpans);
   }
+
+  setSpans = () => {
+    console.log(this.imageRef.current.clientHeight);
+  };
   render() {
     const { urls, description } = this.props.image;
     return (
