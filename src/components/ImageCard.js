@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class ImageCard extends React.Component {
   constructor(props) {
@@ -6,12 +6,12 @@ class ImageCard extends React.Component {
     this.imageRef = React.createRef();
   }
   render() {
-    const {urls, description} = this.props.image;
+    const { urls, description } = this.props.image;
     return (
       <div>
-        <img src={urls.regular} alt={description}
+        <img src={urls.regular} alt={description} ref={this.imageRef} />
       </div>
-    )
+    );
   }
 }
 
