@@ -5,6 +5,11 @@ class ImageCard extends React.Component {
     super(props);
     this.imageRef = React.createRef();
   }
+
+  componentDidMount() {
+    console.log(this.imageRef);
+    console.log(this.imageRef.current.clientHeight);
+  }
   render() {
     const { urls, description } = this.props.image;
     return (
